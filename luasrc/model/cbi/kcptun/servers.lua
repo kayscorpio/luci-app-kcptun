@@ -25,7 +25,7 @@ s.extedit = dsp.build_url("admin/services/kcptun/servers/%s")
 function s.create(...)
 	local sid = TypedSection.create(...)
 	if sid then
-		m.uci:save("kcptun")
+		m.uci:save("kcptun_luci")
 		http.redirect(s.extedit % sid)
 		return
 	end
@@ -38,15 +38,15 @@ end
 
 o = s:option(DummyValue, "_server_address", translate("Server Address"))
 function o.cfgvalue(self, section)
-	local server = m.uci:get("kcptun", section, "server_addr") or "?"
-	local server_port = m.uci:get("kcptun", section, "server_port") or "29900"
+	local server = m.uci:get("kcptun_luci", section, "server_addr") or "?"
+	local server_port = m.uci:get("kcptun_luci", section, "server_port") or "29900"
 	return "%s:%s" % { get_ip_string(server), server_port }
 end
 
 o = s:option(DummyValue, "_listen_addres", translate("Listen Address"))
 function o.cfgvalue(self, section)
-	local local_host = m.uci:get("kcptun", section, "listen_addr") or "0.0.0.0"
-	local local_port = m.uci:get("kcptun", section, "listen_port") or "12984"
+	local local_host = m.uci:get("kcptun_luci", section, "listen_addr") or "0.0.0.0"
+	local local_port = m.uci:get("kcptun_luci", section, "listen_port") or "12984"
 	return "%s:%s" % { get_ip_string(local_host), local_port }
 end
 
