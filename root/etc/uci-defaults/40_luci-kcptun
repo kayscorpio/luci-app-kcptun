@@ -1,23 +1,23 @@
 #!/bin/sh
 
 uci -q batch <<-EOF >/dev/null
-	delete ucitrack.@kcptun[-1]
-	add ucitrack kcptun
-	set ucitrack.@kcptun[-1].init=kcptun
+	delete ucitrack.@kcptun_luci[-1]
+	add ucitrack kcptun_luci
+	set ucitrack.@kcptun_luci[-1].init=kcptun_luci
 	commit ucitrack
 EOF
 
-general=$(uci -q get kcptun.@general[-1])
+general=$(uci -q get kcptun_luci.@general[-1])
 
 if [ -z "$general" ]; then
-	uci -q add kcptun general
+	uci -q add kcptun_luci general
 fi
 
 if [ ."$general" != ."general" ]; then
 	uci -q batch <<-EOF >/dev/null
-		rename kcptun.@general[-1]="general"
-		set kcptun.general.server=""
-		commit kcptun
+		rename kcptun_luci.@general[-1]="general"
+		set kcptun_luci.general.server=""
+		commit kcptun_luci
 	EOF
 fi
 

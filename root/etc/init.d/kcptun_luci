@@ -18,7 +18,7 @@
 START=99
 USE_PROCD=1
 
-KCPTUN=kcptun
+KCPTUN=kcptun_luci
 CONFIG_FOLDER=/var/etc/$KCPTUN
 
 if [ -r /usr/share/libubox/jshn.sh ]; then
@@ -104,7 +104,7 @@ validate_config_section() {
 		'client_file:string' \
 		'daemon_user:string:root' \
 		'enable_logging:bool:0' \
-		'log_folder:directory:/var/log/kcptun' \
+		'log_folder:directory:/var/log/kcptun_luci' \
 		'mem_percentage:range(0,100):80'
 }
 

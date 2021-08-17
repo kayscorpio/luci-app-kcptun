@@ -52,7 +52,7 @@ o.rmempty = false
 
 o = s:option(Value, "log_folder", translate("Log Folder"))
 o.datatype = "directory"
-o.placeholder = "/var/log/kcptun"
+o.placeholder = "/var/log/kcptun_luci"
 o:depends("enable_logging", "1")
 o.formvalue = function(...)
 	local v = (Value.formvalue(...) or ""):trim()

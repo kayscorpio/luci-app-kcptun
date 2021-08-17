@@ -7,7 +7,7 @@ local http = require "luci.http"
 local kcp = require "luci.model.kcptun"
 
 function index()
-	if not nixio.fs.access("/etc/config/kcptun") then
+	if not nixio.fs.access("/etc/config/kcptun_luci") then
 		return
 	end
 

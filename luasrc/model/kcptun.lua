@@ -13,7 +13,7 @@ function get_config_option(option, default)
 end
 
 function get_current_log_file(type)
-	local log_folder = get_config_option("log_folder", "/var/log/kcptun")
+	local log_folder = get_config_option("log_folder", "/var/log/kcptun_luci")
 	return "%s/%s.%s.log" % { log_folder, type, "general" }
 end
 
