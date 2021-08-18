@@ -9,7 +9,7 @@ local util = require "luci.util"
 module("luci.model.kcptun", package.seeall)
 
 function get_config_option(option, default)
-	return uci:get("kcptun", "general", option) or default
+	return uci:get("kcptun_luci", "general", option) or default
 end
 
 function get_current_log_file(type)
