@@ -144,7 +144,7 @@ validate_server_section() {
 
 validate_client_file() {
 	local file="$1"
-
+  echo "$file"
 	if [ ! -f "$file" ]; then
 		return 1
 	fi
@@ -178,7 +178,6 @@ start_kcptun_instance() {
 		return 1;
 	elif ! validate_client_file "$client_file"; then
 		_log "err" "Client file validation failed."
-		echo validate_client_file "$client_file"
 		return 1
 	fi
 
