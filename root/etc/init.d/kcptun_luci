@@ -178,7 +178,7 @@ start_kcptun_instance() {
 		return 1;
 	elif ! validate_client_file "$client_file"; then
 		_log "err" "Client file validation failed."
-		echo "$client_file"
+		echo validate_client_file "$client_file"
 		return 1
 	fi
 
