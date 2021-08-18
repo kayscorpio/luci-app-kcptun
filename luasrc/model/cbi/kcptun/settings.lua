@@ -25,7 +25,7 @@ uci:foreach("kcptun_luci", "servers", function(s)
 	end
 end)
 
-m = Map("kcptun", "%s - %s" % { translate("Kcptun"), translate("Settings") })
+m = Map("kcptun_luci", "%s - %s" % { translate("Kcptun"), translate("Settings") })
 m:append(Template("kcptun/status"))
 
 s = m:section(NamedSection, "general", "general", translate("General Settings"))
