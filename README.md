@@ -1,3 +1,5 @@
+#修改版，解决最新lede固件kcptun-config冲突，运行文件与配置文件改名为kcptun_luci
+
 # luci-app-kcptun
 
 Luci support for kcptun
