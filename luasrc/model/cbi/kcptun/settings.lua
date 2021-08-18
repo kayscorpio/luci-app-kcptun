@@ -17,7 +17,7 @@ local function get_ip_string(ip)
 	end
 end
 
-uci:foreach("kcptun", "servers", function(s)
+uci:foreach("kcptun_luci", "servers", function(s)
 	if s.alias then
 		server_table[s[".name"]] = s.alias
 	elseif s.server_addr and s.server_port then
