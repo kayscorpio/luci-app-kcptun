@@ -14,7 +14,7 @@ local function get_ip_string(ip)
 	end
 end
 
-m = Map("kcptun", "%s - %s" % { translate("Kcptun"), translate("Server List") })
+m = Map("kcptun_luci", "%s - %s" % { translate("Kcptun"), translate("Server List") })
 
 s = m:section(TypedSection, "servers")
 s.anonymous = true

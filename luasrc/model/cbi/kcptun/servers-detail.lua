@@ -29,7 +29,7 @@ local modes = {
 	"manual",
 }
 
-m = Map("kcptun", "%s - %s" % { translate("Kcptun"), translate("Edit Server") })
+m = Map("kcptun_luci", "%s - %s" % { translate("Kcptun"), translate("Edit Server") })
 m.redirect = dsp.build_url("admin/services/kcptun/servers")
 
 if m.uci:get("kcptun_luci", sid) ~= "servers" then
